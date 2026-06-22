@@ -1,23 +1,27 @@
 import React, { useEffect, useState } from "react";
-import { dummyEmployeeDashboardData } from "../assets/assets";
+import {
+  dummyAdminDashboardData,
+  dummyEmployeeDashboardData,
+} from "../assets/assets";
+import Loading from "../components/Loading/Loading";
+import EmployeeDashBoard from "../components/EmployeeDashBoard/EmployeeDashBoard";
+import AdminDashBoard from "../components/AdminDashBoard/AdminDashBoard";
 
 const DashBoard = () => {
   const [data, setData] = useState(null);
-  // Nên khởi tạo loading là true luôn từ đầu vì mới vào là phải load data ngay
+
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Giả lập thời gian fetch data mất 1 giây
     const timer = setTimeout(() => {
-      setData(dummyEmployeeDashboardData); // Gán dữ liệu vào biến data
-      setLoading(false); // Tắt trạng thái loading
+      setData(dummyAdminDashboardData);
+      setLoading(false);
     }, 1000);
 
-    // Cleanup function để tránh rò rỉ bộ nhớ nếu component bị unmount giữa chừng
     return () => clearTimeout(timer);
   }, []);
 
-  if (loading) return <p>...Loading</p>;
+  if (loading) return <Loading />;
 
   if (!data)
     return (
@@ -27,9 +31,9 @@ const DashBoard = () => {
     );
 
   if (data.role === "ADMIN") {
-    return <div> Admin DashBoard</div>;
+    return <AdminDashBoard data={data} />;
   } else {
-    return <div> Employee DashBoard</div>;
+    return <EmployeeDashBoard data={data} />;
   }
 };
 
