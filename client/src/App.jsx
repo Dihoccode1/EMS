@@ -8,7 +8,7 @@ import { Route, Routes, Navigate } from "react-router-dom";
 import DashBoard from "./pages/DashBoard";
 import Employees from "./pages/Employees/Employees";
 import Attendance from "./pages/Attendance/Attendance";
-import Leave from "./pages/Leave";
+import Leave from "./pages/Leave/Leave";
 import Payslips from "./pages/Payslips";
 import Settings from "./pages/Settings";
 import LoginLanding from "./pages/LoginLanding";
