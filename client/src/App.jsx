@@ -7,7 +7,7 @@ import { Route, Routes, Navigate } from "react-router-dom";
 // internal imports
 import DashBoard from "./pages/DashBoard";
 import Employees from "./pages/Employees/Employees";
-import Attendance from "./pages/Attendance";
+import Attendance from "./pages/Attendance/Attendance";
 import Leave from "./pages/Leave";
 import Payslips from "./pages/Payslips";
 import Settings from "./pages/Settings";
