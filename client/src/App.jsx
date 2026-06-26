@@ -10,7 +10,7 @@ import Employees from "./pages/Employees/Employees";
 import Attendance from "./pages/Attendance/Attendance";
 import Leave from "./pages/Leave/Leave";
 import Payslips from "./pages/Payslips/Payslips";
-import Settings from "./pages/Settings";
+import Settings from "./pages/Settings/Settings";
 import LoginLanding from "./pages/LoginLanding";
 import Layout from "./pages/Layout";
 import PrintPayslip from "./pages/PrintPayslip";
@@ -21,7 +21,6 @@ const App = () => {
     <>
       <Toaster />
       <Routes>
-        {/* NHỮNG TRANG KHÔNG SỬ DỤNG LAYOUT (Không có Sidebar) */}
         <Route path="/login" element={<LoginLanding />} />
         <Route
           path="/login/admin"
@@ -41,7 +40,6 @@ const App = () => {
         />
         <Route path="/print/payslips/:id" element={<PrintPayslip />} />
 
-        {/* NHỮNG TRANG SỬ DỤNG LAYOUT (Có Sidebar) */}
         <Route element={<Layout />}>
           <Route path="/dashboard" element={<DashBoard />} />
           <Route path="/employees" element={<Employees />} />
@@ -51,7 +49,6 @@ const App = () => {
           <Route path="/settings" element={<Settings />} />
         </Route>
 
-        {/* Bắt các link sai và chuyển hướng về dashboard */}
         <Route path="*" element={<Navigate to="/dashboard" replace />} />
       </Routes>
     </>
