@@ -37,7 +37,7 @@ const LeaveHistory = ({ leaves, isAdmin, onUpdate }) => {
             ) : (
               leaves.map((leave) => {
                 return (
-                  <tr key={leave._id || leave._id}>
+                  <tr key={leave._id}>
                     {isAdmin && (
                       <td className=" text-slate-900">
                         {leave.employee.firstName} {leave.employee.lastName}

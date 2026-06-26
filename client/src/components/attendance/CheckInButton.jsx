@@ -28,9 +28,8 @@ const CheckInButton = ({ todayRecord, onAction }) => {
   }
 
   return (
-    <div className="absolute bottom-4 right-4 flex flex-col z-1">
+    <div className="flex flex-col items-center">
       <button
-        // Fix 2: Đổi onCanPlay thành onClick
         onClick={handleAttendance}
         disabled={loading}
         className={`w-full max-w-xs flex justify-between items-center gap-8 p-4 rounded-xl bg-linear-to-r text-white ${isCheckedIn ? "from-slate-700 to-slate-900" : "from-indigo-600 to-indigo-700"} `}

@@ -31,11 +31,11 @@ const CreatedEmployeeModal = ({
           <EmployeeForm
             initialData={isEditing}
             onSuccess={() => {
-              showCreateModal(null);
+              setShowCreateModal(false);
               fetchEmployees();
             }}
             onCancel={() => {
-              showCreateModal(null);
+              setShowCreateModal(false);
             }}
           />
         </div>

@@ -20,7 +20,7 @@ const Leave = () => {
     setTimeout(() => {
       setLoading(false);
     }, 1000);
-  }, [leaves]);
+  }, []);
 
   useEffect(() => {
     fetchLeaves();

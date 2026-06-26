@@ -22,7 +22,7 @@ const Attendance = () => {
     fetchData();
   }, [fetchData]);
 
-  if (loading && <Loading />) return <div>Attendance</div>;
+  if (loading) return <Loading />;
   const today = new Date();
   today.setHours(0, 0, 0, 0);
   const todayRecord = history.find(

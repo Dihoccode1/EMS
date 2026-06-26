@@ -13,7 +13,7 @@ import Payslips from "./pages/Payslips/Payslips";
 import Settings from "./pages/Settings/Settings";
 import LoginLanding from "./pages/LoginLanding";
 import Layout from "./pages/Layout";
-import PrintPayslip from "./pages/PrintPayslip";
+import PrintPayslip from "./pages/PrintPayslip/PrintPayslip";
 import LoginForm from "./components/LoginForm/LoginForm";
 
 const App = () => {

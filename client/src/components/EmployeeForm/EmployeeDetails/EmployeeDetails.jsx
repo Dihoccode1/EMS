@@ -71,7 +71,6 @@ const EmployeeDetails = ({ initialData, isEditMode }) => {
           <div>
             <label className="mt-2 block"> Status</label>
             <select
-              type="number"
               name="status"
               required
               defaultValue={initialData?.employeeStatus || 0}
