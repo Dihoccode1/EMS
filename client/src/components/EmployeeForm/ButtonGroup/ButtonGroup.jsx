@@ -20,9 +20,9 @@ const ButtonGroup = ({
         Cancel
       </button>
       <button
-        loading={loading}
+        disabled={loading}
         type="submit"
-        className="btn-secondary flex items-center justify-center "
+        className="btn-primary flex items-center justify-center"
       >
         {loading && <Loader2Icon className="w-4 h-4 mr-2 animate-spin" />}
         {isEditMode ? "Update Employee" : "Create Employee"}

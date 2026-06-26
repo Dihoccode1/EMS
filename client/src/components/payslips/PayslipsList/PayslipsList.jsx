@@ -30,7 +30,7 @@ const PayslipsList = ({ payslips, isAdmin }) => {
             ) : (
               payslips.map((payslip) => {
                 return (
-                  <tr key={payslip._id || payslip._id}>
+                  <tr key={payslip._id}>
                     {isAdmin && (
                       <td className=" text-slate-900">
                         {payslip.employee.firstName} {payslip.employee.lastName}
@@ -56,7 +56,7 @@ const PayslipsList = ({ payslips, isAdmin }) => {
                       <button
                         onClick={() =>
                           window.open(
-                            `/print/payslips/${payslip._id || payslip._id}`,
+                            `/print/payslips/${payslip._id}`,
                           )
                         }
                         className="inline-flex items-center px-3 py-1.5 text-xs font-medium rounded text-blue-600 bg-blue-50 hover:border-l-blue-100 transition-colors ring-1 ring-blue-600/10 "

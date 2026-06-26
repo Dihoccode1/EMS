@@ -32,7 +32,7 @@ const AttendanceHistory = ({ history }) => {
               history.map((record) => {
                 const dayType = getDayTypeDisplay(record);
                 return (
-                  <tr key={record._id || record._id}>
+                  <tr key={record._id}>
                     <td className="px-6 py-4 font-medium text-slate-900">
                       {format(new Date(record.date), "MMM dd,yyyy")}
                     </td>
@@ -41,14 +41,12 @@ const AttendanceHistory = ({ history }) => {
                       {record.checkIn
                         ? format(new Date(record.checkIn), "hh:mm a")
                         : "-"}
-                      {format(new Date(record.date), "MMM dd,yyyy")}
                     </td>
 
                     <td className="px-6 py-4 font-medium text-slate-900">
                       {record.checkOut
                         ? format(new Date(record.checkOut), "hh:mm a")
                         : "-"}
-                      {format(new Date(record.date), "MMM dd,yyyy")}
                     </td>
 
                     <td className="px-6 py-4  text-slate-600 font-medium">

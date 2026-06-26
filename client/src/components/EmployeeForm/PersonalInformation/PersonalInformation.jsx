@@ -31,7 +31,7 @@ const PersonalInformation = ({ initialData }) => {
         <div>
           <label className="block mt-2">Phone Number</label>
           <input
-            type="phone"
+            type="tel"
             name="phone"
             required
             defaultValue={initialData?.phone}
@@ -41,7 +41,7 @@ const PersonalInformation = ({ initialData }) => {
         <div>
           <label className="block mt-2">Join Date</label>
           <input
-            type="Date"
+            type="date"
             name="joinDate"
             required
             defaultValue={
@@ -50,7 +50,9 @@ const PersonalInformation = ({ initialData }) => {
                 : ""
             }
           />
+        </div>
 
+        <div className="sm:col-span-2">
           <Bio initialData={initialData} />
         </div>
       </div>
