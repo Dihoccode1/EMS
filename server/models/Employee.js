@@ -1,6 +1,6 @@
 import e from "express";
 import mongoose from "mongoose";
-import { DEPARTMENTS } from "../contstants/department";
+import { DEPARTMENTS } from "../contstants/department.js";
 
 const employeeSchema = new mongoose.Schema(
   {

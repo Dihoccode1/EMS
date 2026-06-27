@@ -1,7 +1,6 @@
 import Employee from "../models/Employee.js";
 import bcrypt from "bcrypt";
-import User from "../models/user";
-import { useSyncExternalStore } from "react";
+import User from "../models/User.js";
 // Get employee data
 export const getEmployee = async (req, res) => {
   try {
