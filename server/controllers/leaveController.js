@@ -1,10 +1,7 @@
+import Employee from "../models/Employee.js";
+import LeaveApplication from "../models/LeaveApplication.js";
 // Create leaves
-
-import e from "express";
-import Employee from "../models/Employee";
-import LeaveApplication from "../models/LeaveApplication";
-import { ReturnDocument } from "mongodb";
-
+// POST/api/leaves
 // POST/api/leaves
 export const createLeave = async (req, res) => {
   try {
@@ -89,7 +86,7 @@ export const getLeave = async (req, res) => {
 
 //Update leaves status
 // PATCH/api/leaves:id
-export const updateLeave = async (req, res) => {
+export const updateLeaveStatus = async (req, res) => {
   try {
     const { status } = req.body;
     if (!["APPROVED", "REJECTED"].includes(status)) {
@@ -107,7 +104,3 @@ export const updateLeave = async (req, res) => {
     return res.status(500).json({ error: "Failed " });
   }
 };
-
-// Delete leaves
-// DELETE/api/leaves:id
-export const deleteLeave = async (req, res) => {};
