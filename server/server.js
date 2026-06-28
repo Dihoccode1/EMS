@@ -8,6 +8,7 @@ import authRoutes from "./routes/authenRoutes.js";
 import employeeRoutes from "./routes/employeeRoutes.js";
 import profileRouter from "./routes/profileRoutes.js";
 import attendanceRouter from "./routes/attendanceRoutes.js";
+import leaveRouter from "./routes/leaveRoutes.js";
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -26,6 +27,7 @@ app.use("/api/auth", authRoutes);
 app.use("/api/employee", employeeRoutes);
 app.use("/api/profile", profileRouter);
 app.use("/api/attendance", attendanceRouter);
+app.use("/api/leave", leaveRouter);
 // Connect to MongoDB
 connectDB();
 // Start the server
