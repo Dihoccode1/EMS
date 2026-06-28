@@ -1,10 +1,9 @@
 import mongoose from "mongoose";
 
-const payslipSchema = new mongoose.Schema(
-  {
+const payslipSchema = new mongoose.Schema({
     employeeID: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "Employee",
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Employee",
     },
     month: { type: Number, required: true },
     year: { type: Number, required: true },
@@ -12,11 +11,8 @@ const payslipSchema = new mongoose.Schema(
     allowances: { type: Number, default: 0 },
     deductions: { type: Number, default: 0 },
     netSalary: { type: Number, required: true },
-  },
-  { timestamps: true },
-);
-attendanceSchema.index({ employeeID: 1, date: 1 }, { unique: true });
-const Attendance =
-  mongoose.model.Attendance || mongoose.model("Attendance", userSchema);
+}, { timestamps: true }, );
+payslipSchema.index({ employeeID: 1, date: 1 }, { unique: true });
+const Payslip = mongoose.model.Payslip || mongoose.model("Payslip", payslipSchema);
 
-export default Attendance;
+export default Payslip;
