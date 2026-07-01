@@ -1,8 +1,12 @@
 // server.js
+import { serve } from "inngest/express";
+import { inngest, functions } from "./inngest/inngest.js";
 import express from "express";
 import cors from "cors";
 import "dotenv/config";
 import multer from "multer";
+
+// Internal imports
 import connectDB from "./config/db.js";
 import authRoutes from "./routes/authenRoutes.js";
 import employeeRoutes from "./routes/employeeRoutes.js";
@@ -20,10 +24,11 @@ const HOSTNAME = "http://localhost";
 app.use(cors());
 app.use(express.json());
 app.use(multer().none());
+app.use("/api/inngest", serve({ client: inngest, functions }));
 
 // Routes
 app.get("/", (req, res) => {
-    res.send(`Hello world`);
+  res.send(`Hello world`);
 });
 app.use("/api/auth", authRoutes);
 app.use("/api/employee", employeeRoutes);
@@ -36,5 +41,5 @@ app.use("/api/dashboard", dashboardRouter);
 connectDB();
 // Start the server
 app.listen(PORT, () => {
-    console.log(`Server is running at ${HOSTNAME}:${PORT}`);
+  console.log(`Server is running at ${HOSTNAME}:${PORT}`);
 });
