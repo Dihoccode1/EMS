@@ -89,7 +89,7 @@ const attendanceReminderCron = inngest.createFunction(
   {
     id: "attendance-reminder-cron",
     // Dùng "cron" thay vì "event" cho các task chạy theo lịch
-    triggers: [{ cron: "0 0 6 * * *" }],
+    triggers: [{ cron: "TZ=Asia/Hanoi  0 11 * * *" }],
   },
   async ({ step }) => {
     // Step 1: Get today's date range
